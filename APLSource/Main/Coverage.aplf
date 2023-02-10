@@ -1,5 +1,5 @@
  Coverage←{
-     0=⍵.CodeSpace:¯1 ''
+     ~⍵.Profile:¯1 ''
      s←Spaces⍕⍵.CodeSpace
      n←s.⎕NL⊂-3 4
      p←'.',¨⍨⍕¨s

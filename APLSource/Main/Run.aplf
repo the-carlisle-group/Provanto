@@ -7,13 +7,14 @@
      z.(Stop Quiet)←2↑⍺
      z.(TestSpace CodeSpace)←2↑⍵,0
      z.(Status DecoratedStatus)←Status''
+     z.Profile←z.CodeSpace≠0
      _←z.TestSpace.⎕FX¨⎕NR¨'Assert' 'Try'
      z.Function←'T'z.TestSpace.⎕NL ¯3
-     _←⎕PROFILE'clear'
-     _←⎕PROFILE'start' 'coverage'
+     p←⎕PROFILE⍣z.Profile
+     _←p¨'Clear'('Start' 'coverage')
      z.Result←z Exe¨z.Function
-     _←⎕PROFILE'stop'
+     _←p'stop'
      z.(Coverage Untested)←Coverage z
-     _←⎕PROFILE'clear'
+     _←p'clear'
      1:z←z⊣Display z
  }
