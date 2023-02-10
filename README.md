@@ -30,3 +30,56 @@ TestPrimitivePlus←{
 
 The `Assert` function requires a scalar Boolean right argument. The `Try` operator attempts to apply
 the function with the given arguments, and returns the error number or 0 if no error is generated.
+
+For real examples, see the [tests for the Text2Date project](https://github.com/the-carlisle-group/Text2Date/tree/master/APLSource/Tests).
+
+## Running the Tests
+The `Run` function takes a test namespace and executes the tests.
+The following is an example from the Text2Date project:
+
+~~~
+       #.Provanto.Run #.Text2Date.Tests
+Passed:       TestCenturyWindow
+Passed:       TestFixedFormats
+Passed:       TestLeadingVariableElement
+Passed:       TestPattern
+********************
+ Number of tests:  4
+ Passed            4
+ Failed            0
+ Broken            0
+ N/A               0
+ Disabled          0
+********************
+Code coverage:  n/a
+~~~
+
+The code coverage feature is activated by providing the parent code namespace as an optional argument:
+
+~~~
+     #.Provanto.Main.Run #.Text2Date.(Tests Main)
+Passed:       TestCenturyWindow
+Passed:       TestFixedFormats
+Passed:       TestLeadingVariableElement
+Passed:       TestPattern
+********************
+ Number of tests:  4
+ Passed            4
+ Failed            0
+ Broken            0
+ N/A               0
+ Disabled          0
+********************
+Code coverage:  78%
+Untested code:
+#.Text2Date.Main.BasicFormats            
+#.Text2Date.Main.InferFormat             
+#.Text2Date.Main.Signal                  
+#.Text2Date.Main.VariableMMM[3 4 5 6 7 8]
+~~~
+
+The untested functions, or specfic untested lines, are displayed.
+
+## Test Result Codes
+A test should explicilty return a `0` for Passed. The framework provides a `1` for Failed, or a `2` for Broken.
+A test may explicilty return a `3` for Not Applicable, or or `4` for Disabled.
