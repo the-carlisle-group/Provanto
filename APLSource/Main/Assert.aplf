@@ -1,0 +1,3 @@
+ Assert←{
+     0⊣'TEST FAILED'⎕SIGNAL 789/⍨~⍵
+ }

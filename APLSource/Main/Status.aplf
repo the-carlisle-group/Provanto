@@ -1,0 +1,5 @@
+ Status←{
+     s←'Passed' 'Failed' 'Broken' 'N/A' 'Disabled'
+     d←↓(↑':',¨⍨s),' ',↑3/¨' !!--'
+     s d
+ }

@@ -1,0 +1,7 @@
+ Exe←{
+     (1+⍳99)/⍨~⍺.StopOnBroken::2
+     789/⍨~⍺.StopOnFail::1
+     b←⍺.TestSpace⍎⍵,' 0'
+     ⍺.Quiet>0:b
+     b⊣⎕←(b⊃⍺.DecoratedStatus),' ',⍵
+ }

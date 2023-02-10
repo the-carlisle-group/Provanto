@@ -1,0 +1,11 @@
+ Display←{
+     ⍵.Quiet>1:0
+     r←⍵.Result
+     h←'Number of tests:'(≢r)
+     ⎕←'*'⍪(⍕h⍪⍵.Status,⍪+⌿r∘.=⍳5)⍪'*'
+     ⎕←'Code coverage: ',,'O¯1<n/a>Q<%>I4'⎕FMT ⍵.Coverage
+     ⍵.Coverage∊¯1 100:0
+     ⎕←'Untested code:'
+     ⎕←↑⍵.Untested
+     0
+ }

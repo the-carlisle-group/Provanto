@@ -1,0 +1,20 @@
+ Coverage←{
+     0=⍵.CodeSpace:¯1 ''
+     s←Spaces⍕⍵.CodeSpace
+     n←s.⎕NL⊂-3 4
+     p←'.',¨⍨⍕¨s
+     af←⊃,/p{⍺∘,¨⍵}¨n
+     d←⎕PROFILE'data'
+     b←d[;1]∊⊂⍬
+     ef←b/d[;0]
+     el←(+\b)⊆d[;1]
+     nr←(⎕NR¨af)~¨⊂⊂' }'
+     al←⍳¨≢¨nr
+     ul←al~¨(el,⊂⍬)[ef⍳af]
+     c←100×1-÷/≢¨∊¨ul al
+     k←0<≢¨ul
+     uf←~af∊ef
+     (uf/ul)←⊂⍬
+     z←k/af{0=≢⍵:⍺ ⋄ ⍺,'[',(⍕⍵),']'}¨ul  ⍝
+     c z
+ }

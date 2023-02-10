@@ -1,0 +1,19 @@
+ Run←{
+     ⍝ ⍺ ←→ StopOnFail 0|1, StopOnBroken 0|1, Quiet 0|1|2
+     ⍝ ⍵ ←→ Test space, [Code Space]
+     ⍝ ← ←→ Result space
+     ⍺←0
+     z←⎕NS''
+     z.(StopOnFail StopOnBroken Quiet)←3↑⍺
+     z.(TestSpace CodeSpace)←2↑⍵,0
+     z.(Status DecoratedStatus)←Status''
+     _←z.TestSpace.⎕FX¨⎕NR¨'Assert' 'Try'
+     z.Function←'T'z.TestSpace.⎕NL ¯3
+     _←⎕PROFILE'clear'
+     _←⎕PROFILE'start' 'coverage'
+     z.Result←z Exe¨z.Function
+     _←⎕PROFILE'stop'
+     z.(Coverage Untested)←Coverage z
+     _←⎕PROFILE'clear'
+     1:z←z⊣Display z
+ }
