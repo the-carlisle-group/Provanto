@@ -1,7 +1,7 @@
 # Provanto
 Provanto is a testing framework for Dyalog APL.
 
-It is included with Dado, and may be run with the user command `]dada.Runtests`. Dado expects the code to be in 
+It is included with Dado, and may be run with the user command `]Dado.Runtests`. Dado expects the code to be in 
 `Main` and the tests to be in `Tests`, unless otherwise specified.  
 
 Provanto is also distributed as a single namespace script for copy/pasting into a project, with no need for
@@ -28,9 +28,12 @@ TestPrimitivePlus←{
  }
 ~~~
 
-The `Assert` function requires a scalar Boolean right argument. The `Try` operator attempts to apply
+The `Assert` function requires a scalar Boolean right argument. It preceeds a naked guard. 
+The `Try` operator attempts to apply
 the function with the given arguments, and returns the error number or 0 if no error is generated.
 
+A test function may include additional expressions as necessary. It is typical to use two lines
+for each assertion, the first to compute a value, the subsequent one to test the value.
 For real examples, see the [tests for the Text2Date project](https://github.com/the-carlisle-group/Text2Date/tree/master/APLSource/Tests).
 
 ## Running the Tests
@@ -38,7 +41,7 @@ The `Run` function takes a test namespace and executes the tests.
 The following is an example from the Text2Date project:
 
 ~~~
-       #.Provanto.Run #.Text2Date.Tests
+      #.Provanto.Run #.Text2Date.Tests
 Passed:       TestCenturyWindow
 Passed:       TestFixedFormats
 Passed:       TestLeadingVariableElement
@@ -57,7 +60,7 @@ Code coverage:  n/a
 The code coverage feature is activated by providing the parent code namespace as an optional argument:
 
 ~~~
-     #.Provanto.Main.Run #.Text2Date.(Tests Main)
+      #.Provanto.Run #.Text2Date.(Tests Main)
 Passed:       TestCenturyWindow
 Passed:       TestFixedFormats
 Passed:       TestLeadingVariableElement
