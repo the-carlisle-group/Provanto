@@ -88,5 +88,5 @@ Untested code:
 
 The untested functions, or specfic untested lines, are displayed.
 
-The optional left argument to `Run` provides options to stop on a failing test, stop on a broken test,
+The optional left argument to `Run` provides options to stop on failing and broken tests,
 and to supress session output.
