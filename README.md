@@ -36,6 +36,11 @@ A test function may include additional expressions as necessary. It is typical t
 for each assertion, the first to compute a value, the subsequent one to test the value.
 For real examples, see the [tests for the Text2Date project](https://github.com/the-carlisle-group/Text2Date/tree/master/APLSource/Tests).
 
+## Test Result Codes
+A test should explicilty return a `0` for Passed.
+The framework provides a `1` for Failed, or a `2` for Broken.
+A test may explicilty return a `3` for Not Applicable, or or `4` for Disabled.
+
 ## Running the Tests
 The `Run` function takes a test namespace and executes the tests.
 The following is an example from the Text2Date project:
@@ -83,6 +88,5 @@ Untested code:
 
 The untested functions, or specfic untested lines, are displayed.
 
-## Test Result Codes
-A test should explicilty return a `0` for Passed. The framework provides a `1` for Failed, or a `2` for Broken.
-A test may explicilty return a `3` for Not Applicable, or or `4` for Disabled.
+The optional left argument to `Run` provides options to stop on a failing test, stop on a broken test,
+and to supress session output.
