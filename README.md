@@ -61,7 +61,7 @@ Passed:       #.Text2Date.Tests.TestPattern
 ********************
 ~~~
 
-The code coverage feature is activated by providing the parent code namespace as an optional argument:
+A code coverage feature is activated by providing the parent code namespace as an optional argument:
 
 ~~~
       #.Provanto.Run #.Text2Date.(Tests Main)
@@ -88,4 +88,4 @@ Untested code:
 The untested functions, or specfic untested lines, are displayed.
 
 The optional left argument to `Run` provides options to stop on failing and broken tests,
-and to supress session output.
+and to suppress session output.
