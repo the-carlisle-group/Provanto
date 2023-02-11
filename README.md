@@ -47,10 +47,10 @@ The following is an example from the Text2Date project:
 
 ~~~
       #.Provanto.Run #.Text2Date.Tests
-Passed:       TestCenturyWindow
-Passed:       TestFixedFormats
-Passed:       TestLeadingVariableElement
-Passed:       TestPattern
+Passed:       #.Text2Date.Tests.TestCenturyWindow
+Passed:       #.Text2Date.Tests.TestFixedFormats
+Passed:       #.Text2Date.Tests.TestLeadingVariableElement
+Passed:       #.Text2Date.Tests.TestPattern
 ********************
  Number of tests:  4
  Passed            4
@@ -59,17 +59,16 @@ Passed:       TestPattern
  N/A               0
  Disabled          0
 ********************
-Code coverage:  n/a
 ~~~
 
 The code coverage feature is activated by providing the parent code namespace as an optional argument:
 
 ~~~
       #.Provanto.Run #.Text2Date.(Tests Main)
-Passed:       TestCenturyWindow
-Passed:       TestFixedFormats
-Passed:       TestLeadingVariableElement
-Passed:       TestPattern
+Passed:       #.Text2Date.TestCenturyWindow
+Passed:       #.Text2Date.TestFixedFormats
+Passed:       #.Text2Date.TestLeadingVariableElement
+Passed:       #.Text2Date.TestPattern
 ********************
  Number of tests:  4
  Passed            4
