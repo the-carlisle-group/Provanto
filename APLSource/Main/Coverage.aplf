@@ -1,6 +1,7 @@
  Coverage←{
      ~⍵.Profile:¯1 ''
      s←Spaces⍕⍵.CodeSpace
+     s,←Spaces⍕⍵.TestSpace
      n←s.⎕NL⊂-3 4
      p←'.',¨⍨⍕¨s
      af←⊃,/p{⍺∘,¨⍵}¨n
