@@ -87,5 +87,8 @@ Untested code:
 
 The untested functions, or specfic untested lines, are displayed.
 
+If code coverage is activated, the test namespace is automatically added to
+the code measured for coverage.
+
 The optional left argument to `Run` provides options to stop on failing and broken tests,
 and to suppress session output.
