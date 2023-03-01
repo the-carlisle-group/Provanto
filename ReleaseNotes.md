@@ -1,4 +1,12 @@
-# Provanto Release 0.0.2                    
+# Provanto Release 0.0.3                    
+1. Truncate code coverage session output when long
+2. Handle multiple test suites and Startup and Teardown functions
+3. Update README.md
+4. Add test namespace to code coverage (Issue #1)
+5. Update README.md
+6. Update README.md
+
+# Provanto Release 0.0.2 2023-02-10 17:00:58
 1. Cleanup
 
 # Provanto Release 0.0.1 2023-02-10 10:56:05
