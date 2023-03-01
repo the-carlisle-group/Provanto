@@ -10,9 +10,12 @@ Dado.
 And, as a Dado project itself, Provanto may be included as a dependency in the normal way. 
 
 ## The Tests Namespace
-Provanto requires a namespace containing test functions. Test functions must be named with the prefix `Test`.
-The Tests namespace may contain application specific helper functions. However, there are two reserved words
-(function/operator names): `Assert` and `Try`. These names should not be used in the Tests namespace. 
+Provanto requires one or more **test suites** which are namespaces containing test functions.  
+The `Tests` namespace may be a test suite itself, or a parent namespace contain multiple test suites.
+The Test functions must be named with the prefix `Test`.
+A test suite namepace may contain application specific helper functions. However, there are four reserved words
+(function/operator names): `Assert` and `Try` should not be used in in the Tests namespace, and  `Startup` and `Teardown`
+have special meaning outlined below.
 
 A test function is a gauntlet of assertions terminated by a `0`. For example, to test the primitive
 function `+` we might write:
@@ -42,7 +45,7 @@ The framework provides a `1` for Failed, or a `2` for Broken.
 A test may explicilty return a `3` for Not Applicable, or or `4` for Disabled.
 
 ## Running the Tests
-The `Run` function takes a test namespace and executes the tests.
+The `Run` function takes a test suite or parent namespace containing multiple test suites, and executes the tests.
 The following is an example from the Text2Date project:
 
 ~~~
@@ -92,3 +95,8 @@ the code measured for coverage.
 
 The optional left argument to `Run` provides options to stop on failing and broken tests,
 and to suppress session output.
+
+## Startup and Teardown
+Each test suite may contain a `Startup` function and a `Teardown` function. These are automatically run before and after the tests in the suite.
+There may also be a `Startup` and `Teardown` function in the parent namespace of a set of suites, which are run once for all of the suites. 
+
