@@ -1,8 +1,5 @@
- Display←{
+ DisplayCodeCoverage←{
      ⍵.Quiet>1:0
-     r←⍵.Result
-     h←'Number of tests:'(≢r)
-     ⎕←'*'⍪(⍕h⍪⍵.Status,⍪+⌿r∘.=⍳5)⍪'*'
      ~⍵.Profile:0
      ⎕←'Code coverage: ',,'Q<%>I4'⎕FMT ⍵.Coverage
      ⍵.Coverage=100:0

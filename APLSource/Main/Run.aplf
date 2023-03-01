@@ -7,14 +7,18 @@
      z.(Stop Quiet)←2↑⍺
      z.(TestSpace CodeSpace)←2↑⍵,0
      z.(Status DecoratedStatus)←Status''
+     z.Suites←{⍵↓⍨1<≢⍵}Spaces⍕z.TestSpace
+     z.IsSuite←z.TestSpace≠⊃z.Suites
      z.Profile←z.CodeSpace≠0
-     _←z.TestSpace.⎕FX¨⎕NR¨'Assert' 'Try'
-     z.Function←'T'z.TestSpace.⎕NL ¯3
      p←⎕PROFILE⍣z.Profile
+     e←z.TestSpace∘Execute⍣z.IsSuite
+     _←e z'Startup'
      _←p¨'Clear'('Start' 'coverage')
-     z.Result←z Exe¨z.Function
+     z.Results←z RunSuite¨z.Suites
      _←p'stop'
+     _←e z'Teardown'
      z.(Coverage Untested)←Coverage z
      _←p'clear'
-     1:z←z⊣Display z
+     _←DisplayTotal z
+     1:z←z⊣DisplayCodeCoverage z
  }

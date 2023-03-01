@@ -1,0 +1,8 @@
+ RunTest←{
+     r←⍺{
+         0/⍨~⍺.Stop::1+789≠⎕DMX.EN
+         ⍎⍵,' 0'
+     }⍵
+     ⍺.Quiet>0:r
+     r⊣⎕←(r⊃⍺.DecoratedStatus),' ',⍵
+ }

@@ -1,0 +1,12 @@
+ RunSuite←{
+     _←⍵ Execute ⍺'Startup'
+     ⎕←'Running suite: ',⍕⍵
+     _←⍵.⎕FX¨⎕NR¨'Assert' 'Try'
+     r←⎕NS''
+     f←⍵.⎕NL ¯3
+     r.Function←f/⍨'Test'∘≡¨4↑¨f
+     p←r.Function{⍵,'.',⍺}¨⊂⍕⍵
+     r.Result←⍺ RunTest¨p
+     _←⍵ Execute ⍺'Teardown'
+     r⊣⍺ DisplaySuite r
+ }

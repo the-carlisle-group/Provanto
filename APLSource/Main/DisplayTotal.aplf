@@ -1,0 +1,9 @@
+ DisplayTotal←{
+     ⍵.Quiet>1:0
+     n←≢⍵.Suites
+     n=1:0
+     r←⊃,/⍵.Results.Result
+     h←('Total number of tests in ',(⍕n),' suites:')(≢r)
+     ⎕←'*'⍪(⍕h⍪⍵.Status,⍪+⌿r∘.=⍳5)⍪'*'
+     0
+ }

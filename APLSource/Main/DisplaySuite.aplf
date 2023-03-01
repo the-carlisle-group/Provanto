@@ -1,0 +1,7 @@
+ DisplaySuite←{
+     ⍺.Quiet>1:0
+     r←⍵.Result
+     h←'Number of tests:'(≢r)
+     ⎕←'*'⍪(⍕h⍪⍺.Status,⍪+⌿r∘.=⍳5)⍪'*'
+     0
+ }
