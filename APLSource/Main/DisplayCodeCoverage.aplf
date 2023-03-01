@@ -4,6 +4,6 @@
      ⎕←'Code coverage: ',,'Q<%>I4'⎕FMT ⍵.Coverage
      ⍵.Coverage=100:0
      ⎕←'Untested code:'
-     ⎕←↑⍵.Untested
+     ⎕←↑{25>≢⍵:⍵ ⋄ (10↑⍵),⊂'... and ',(⍕¯10+≢⍵),' more.'}⍵.Untested
      0
  }
