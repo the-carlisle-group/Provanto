@@ -1,6 +1,6 @@
  RunSuite←{
      _←⍵ Execute ⍺'Startup'
-     ⎕←'Running suite: ',⍕⍵
+     _←⍺ DisplayStartSuite ⍵
      _←⍵.⎕FX¨⎕NR¨'Assert' 'Try'
      r←⎕NS''
      f←⍵.⎕NL ¯3

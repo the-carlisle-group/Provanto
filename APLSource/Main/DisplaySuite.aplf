@@ -1,7 +1,8 @@
  DisplaySuite←{
-     ⍺.Quiet>1:0
+     ⍺.Quiet>2:0
      r←⍵.Result
-     h←'Number of tests:'(≢r)
-     ⎕←'*'⍪(⍕h⍪⍺.Status,⍪+⌿r∘.=⍳5)⍪'*'
+     h←'Total'(≢r)
+     ⎕←'─'⍪(⍕h,⍺.Status,[¯0.5]+⌿r∘.=⍳5)⍪'─'
+     ⎕←''
      0
  }

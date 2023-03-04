@@ -3,6 +3,7 @@
          0/⍨~⍺.Stop::1+789≠⎕DMX.EN
          ⍎⍵,' 0'
      }⍵
-     ⍺.Quiet>0:r
+     ⍺.Quiet>1:r
+     (r=0)∧⍺.Quiet=1:r
      r⊣⎕←(r⊃⍺.DecoratedStatus),' ',⍵
  }

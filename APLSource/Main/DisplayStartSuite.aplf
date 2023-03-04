@@ -1,0 +1,5 @@
+ DisplayStartSuite←{
+     ⍺.Quiet>2:0
+     ⎕←'Running suite: ',⊃⌽'.'(≠⊆⊢)⍕⍵
+     0
+ }
