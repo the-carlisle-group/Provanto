@@ -1,4 +1,11 @@
-# Provanto Release 0.0.3                    
+# Provanto Release 0.0.4                    
+1. Clean up DisplayTotal, and add sample tests
+2. Update README.md
+3. Update README.md
+4. Improve session output
+5. Update README.md
+
+# Provanto Release 0.0.3 2023-03-01 11:11:01
 1. Truncate code coverage session output when long
 2. Handle multiple test suites and Startup and Teardown functions
 3. Update README.md
