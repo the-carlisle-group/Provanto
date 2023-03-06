@@ -42,26 +42,18 @@ The framework provides a `1` for *Failed*, or a `2` for *Broken*.
 A test may explicilty return a `3` for *Not Applicable*, or or `4` for *Disabled*.
 
 ## Running the Tests
-The `Run` function takes a test suite or parent namespace containing multiple test suites, and executes the tests.
+The `Run` function takes a test suite or parent namespace containing multiple test suites, and executes the tests:
+
+~~~
+      {R}←[X [Y]] Run T [C] 
+~~~
+
+T is a test suite or namespace of test suites. C is an optional namespace of code
+the provision of which triggers code coverage reporting.
+X is an optional Boolean flag that if set to 1 stops
+the `Run` function on failed or broken tests. Y is an optional integer from 0 to 3 that progressively suppresses session output. R is a namespace full of useful results for further processing or reporting.
+
 The following is an example from the Text2Date project:
-
-~~~
-      #.Provanto.Run #.Text2Date.Tests
-Passed:       #.Text2Date.Tests.TestCenturyWindow
-Passed:       #.Text2Date.Tests.TestFixedFormats
-Passed:       #.Text2Date.Tests.TestLeadingVariableElement
-Passed:       #.Text2Date.Tests.TestPattern
-********************
- Number of tests:  4
- Passed            4
- Failed            0
- Broken            0
- N/A               0
- Disabled          0
-********************
-~~~
-
-A code coverage feature is activated by providing the parent code namespace as an optional argument:
 
 ~~~
       #.Provanto.Run #.Text2Date.(Tests Main)
@@ -85,13 +77,8 @@ Untested code:
 #.Text2Date.Main.VariableMMM[3 4 5 6 7 8]
 ~~~
 
-The untested functions, or specfic untested lines, are displayed.
-
 If code coverage is activated, the test namespace is automatically added to
 the code measured for coverage.
-
-The optional left argument to `Run` provides options to stop on failing and broken tests,
-and to suppress session output.
 
 ## Startup and Teardown
 Each test suite may contain a `Startup` function and a `Teardown` function. These are automatically run before and after the tests in the suite.
