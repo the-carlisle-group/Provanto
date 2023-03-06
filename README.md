@@ -2,7 +2,7 @@
 Provanto is a testing framework for Dyalog APL.
 
 It is included with Dado, and may be run with the user command `]Dado.Runtests`. Dado expects the tests
-to be in the namespace `Tests` and the code to be in the namespace `Main`, unless otherwise specified.  
+to be in the namespace `Tests` and the code to be in the namespace `Main`, unless otherwise specified.
 Provanto is also distributed as a single namespace script for copy/pasting into a project, with no need for
 Dado. And, as a Dado project itself, Provanto may be included as a dependency in the normal way. 
 
@@ -11,7 +11,7 @@ Provanto requires one or more **test suites** which are namespaces containing te
 The `Tests` namespace may be a test suite itself, or a parent namespace contain multiple test suites.
 The Test functions must be named with the prefix `Test`.
 A test suite may contain application specific helper functions. However, there are four reserved words
-(function/operator names): `Assert` and `Try` should not be used in in the Tests namespace,
+(function/operator names): `Assert` and `Try` should not be used in a test suite,
 and  `Startup` and `Teardown` have special meaning outlined below.
 
 A test function is a gauntlet of assertions terminated by a `0`. For example, to test the primitive
