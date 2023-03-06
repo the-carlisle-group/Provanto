@@ -1,0 +1,8 @@
+ TestMinus←{
+     Assert 0=2-2:
+     Assert 0 1 2≡1 2 3-1:
+     Assert ¯1 ¯2≡2-3 4:
+     Assert 5=2 3-Try 4 5 6:
+     Assert 11=2-Try'A':
+     0
+ }

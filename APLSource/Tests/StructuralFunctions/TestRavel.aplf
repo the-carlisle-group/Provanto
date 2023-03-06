@@ -1,0 +1,4 @@
+ TestRavel←{
+     Assert'Junk'≡,3 3⍴⍳9:
+     1
+ }

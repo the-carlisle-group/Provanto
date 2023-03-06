@@ -1,0 +1,4 @@
+ TestDrop←{
+     Assert 3=NoSuchName:
+     0
+ }

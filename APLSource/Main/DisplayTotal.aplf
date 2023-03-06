@@ -2,17 +2,13 @@
      ⍵.Quiet>3:0
      n←≢⍵.Suites
      n=1:0
-     b←↑{+⌿⍵∘.=⍳5}¨⍵.Results.Result
-     m←b,⍨+/b
-     m←m⍪+⌿m
-     n←{⊃⌽⍵⊆⍨⍵≠'.'}¨⍕¨⍵.Suites
-     bd←'O<->I10'⎕FMT m
-     d←n,⊂'Total'
+     c←↑{+⌿⍵∘.=⍳5}¨⍵.Results.Result
+     d←(⊂'Total'),⍨{⊃⌽⍵⊆⍨⍵≠'.'}¨⍕¨⍵.Suites
+     b←(↑d),'O<->I10'⎕FMT{⍵⍪+⌿⍵}c,⍨+/c
      w←(⌈/≢¨d),6⍴10
-     bd←(↑d),bd
      j←w×1,6⍴¯1
      h←⊃,/j↑¨'Suite' 'Total',⍵.Status
      l←⊃,/j↑¨(w-2)⍴¨'─'
-     ⎕←h⍪l⍪(l⍪⍨¯1↓bd)⍪¯1↑bd
+     ⎕←h⍪l⍪(l⍪⍨¯1↓b)⍪¯1↑b
      0
  }
