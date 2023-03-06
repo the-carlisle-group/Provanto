@@ -1,7 +1,6 @@
  DisplayTotal←{
      ⍵.Quiet>3:0
-     n←≢⍵.Suites
-     n=1:0
+     1=≢⍵.Suites:0
      c←↑{+⌿⍵∘.=⍳5}¨⍵.Results.Result
      d←(⊂'Total'),⍨{⊃⌽⍵⊆⍨⍵≠'.'}¨⍕¨⍵.Suites
      b←(↑d),'O<->I10'⎕FMT{⍵⍪+⌿⍵}c,⍨+/c
