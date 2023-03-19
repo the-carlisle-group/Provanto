@@ -1,0 +1,8 @@
+ z←DfnInTrad2 x;r
+ r←{
+     a←1
+     b←2
+     c←3
+     ⍵+c
+ }x+7
+ z←r

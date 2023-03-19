@@ -4,7 +4,7 @@
      _←⍵.⎕FX¨⎕NR¨'Assert' 'Try'
      r←⎕NS''
      f←⍵.⎕NL ¯3
-     r.Function←f/⍨'Test'∘≡¨4↑¨f
+     r.Function←f/⍨'test'∘≡¨⎕C 4↑¨f
      p←r.Function{⍵,'.',⍺}¨⊂⍕⍵
      r.Result←⍺ RunTest¨p
      _←⍵ Execute ⍺'Teardown'

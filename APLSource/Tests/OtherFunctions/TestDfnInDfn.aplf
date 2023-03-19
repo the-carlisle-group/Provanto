@@ -1,0 +1,4 @@
+ TestDfnInDfn←{
+     Assert 10=DfnInDfn 0:
+     0
+ }

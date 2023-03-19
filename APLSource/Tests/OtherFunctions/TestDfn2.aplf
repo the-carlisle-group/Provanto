@@ -1,0 +1,4 @@
+ TestDfn2←{
+     Assert 8=Dfn2 5:
+     0
+ }

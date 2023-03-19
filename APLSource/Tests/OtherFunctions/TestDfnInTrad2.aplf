@@ -1,0 +1,4 @@
+ TestDfnInTrad2←{
+     Assert 10=DfnInTrad2 0:
+     0
+ }

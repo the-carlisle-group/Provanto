@@ -1,7 +1,7 @@
  Coverage←{
      ~⍵.Profile:¯1 ''
      s←Spaces⍕⍵.CodeSpace
-     s,←Spaces⍕⍵.TestSpace
+     s←∪s,Spaces⍕⍵.TestSpace
      n←s.⎕NL⊂-3 4
      p←'.',¨⍨⍕¨s
      af←⊃,/p{⍺∘,¨⍵}¨n
@@ -9,8 +9,9 @@
      b←d[;1]∊⊂⍬
      ef←b/d[;0]
      el←(+\b)⊆d[;1]
-     nr←(⎕NR¨af)~¨⊂⊂' }'
+     nr←⎕NR¨af
      al←⍳¨≢¨nr
+     al←({{'}'≠⊃⍵~' '}¨⍵}¨nr)/¨al
      ul←al~¨(el,⊂⍬)[ef⍳af]
      c←100×1-÷/≢¨∊¨ul al
      k←0<≢¨ul
