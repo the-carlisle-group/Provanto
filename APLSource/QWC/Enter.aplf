@@ -1,0 +1,13 @@
+ Enter←{
+     ⍝ ⍺ ←→ Applicaiton Form
+     ⍝ ⍵ ←→ Name [Text|⊂Event|EventMesage] [Repeat]
+     ⍝ Examples:
+     ⍝ ⍵ ←→ Name                    e.g.: Enter 'OK'
+     ⍝   ←→ Name Text               e.g.: Enter 'FirstName' 'Paul'
+     ⍝   ←→ Name Event              e.g.: Enter 'MainGrid' (⊂'CellDblClick')
+     ⍝   ←→ Name EventMessage       e.g.: Enter 'MainGrid' Keys.RightCursor 3
+     w←⊆⍵
+     o←⍺ GetObject⊃w
+     _←⍺ Handle o,1↓w
+     ⎕DL ⍺.ActionDelay
+ }

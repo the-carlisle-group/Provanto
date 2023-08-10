@@ -1,0 +1,7 @@
+ OnCaseSelect←{
+     b←⊃⍵
+     v←⎕WN b.##
+     s←GetAppState 0
+     s.(ForceUpper ForceLower AllowMixed)←b=v
+     0
+ }

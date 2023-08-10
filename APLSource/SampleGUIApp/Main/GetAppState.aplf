@@ -1,0 +1,3 @@
+ GetAppState←{
+     fmSampleApp._AppState
+ }

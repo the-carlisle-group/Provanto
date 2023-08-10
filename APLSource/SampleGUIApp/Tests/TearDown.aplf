@@ -1,0 +1,3 @@
+ TearDown←{
+     ##.Main.⎕EX'fmSampleApp'
+ }

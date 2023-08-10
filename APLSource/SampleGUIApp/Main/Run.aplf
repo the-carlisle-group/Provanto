@@ -1,0 +1,14 @@
+ Run←{
+     ⍺←0
+     f←BuildForm 0
+     s←⎕NS''
+     s.TestMode←⍺
+     s.Name←''
+     s.ForceUpper←1
+     s.ForceLower←0
+     s.AllowMixed←0
+     s.AllowDigits←0
+     f._AppState←s
+     ⍺:0
+     f.Wait
+ }

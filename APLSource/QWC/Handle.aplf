@@ -1,0 +1,15 @@
+ Handle←{
+     (o m)←2↑⍵,⊂''
+     1<|≡m:⍺ Fire o,m
+     t←o.Type
+     s←{6::'' ⋄ ⍵.Style}o
+     (t≡'Button')∧s≡'Check':⍺ HandleCheckBox ⍵
+     (t≡'Button')∧s≡'Radio':⍺ HandleRadioButton ⍵
+     s≡'Drop':⍺ HandleDropCombo ⍵
+     t≡'Combo':⍺ HandleCombo ⍵
+     t≡'List':⍺ HandleList ⍵
+     t≡'Edit':⍺ HandleEdit ⍵
+     t≡'Grid':⍺ HandleGrid ⍵
+     1=≢⍵:⍺ Fire o'Select'
+     0
+ }

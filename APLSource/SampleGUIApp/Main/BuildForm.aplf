@@ -1,0 +1,22 @@
+ BuildForm←{
+     f←⍎'fmSampleApp'⎕WC'Form'('Coord' 'RealPixel')
+     f.Caption←'Sample GUI Application'
+     l←⍎'lbFirstName'f.⎕WC'Label' 'First name:'
+     l.Posn←10 10
+     e←⍎'Name'f.⎕WC'Edit'
+     e.Posn←50 10
+     e.onKeyPress←'OnNameKeyPress'
+     g←⍎'Case'f.⎕WC'Group'('Caption' 'Case')
+     g.(Posn Size)←(100 10)(200 300)
+     rb←⍎'ForceUpper'g.⎕WC'Button' 'Force upper'('Style' 'Radio')
+     rb,←⍎'ForceLower'g.⎕WC'Button' 'Force lower'('Style' 'Radio')
+     rb,←⍎'AllowMixed'g.⎕WC'Button' 'Allow mixed'('Style' 'Radio')
+     rb.State←1 0 0
+     rb.Posn←50 100 150,¨10
+     rb.onSelect←⊂'OnCaseSelect'
+     ad←⍎'AllowDigits'f.⎕WC'Button' 'Allow digits'('Style' 'Check')
+     ad.Posn←400 10
+     ad.onSelect←'OnAllowDigitsSelect'
+
+     f
+ }

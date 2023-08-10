@@ -1,0 +1,3 @@
+ GetAppForm←{
+     ##.Main.fmSampleApp
+ }

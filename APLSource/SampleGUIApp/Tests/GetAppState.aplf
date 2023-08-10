@@ -1,0 +1,3 @@
+ GetAppState←{
+     ##.Main.fmSampleApp._AppState
+ }

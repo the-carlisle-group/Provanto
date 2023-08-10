@@ -1,0 +1,15 @@
+ KeySpace←{
+     s←⎕NS''
+     e←'KeyPress'
+     s.RightCursor←e'RC' 0 39 0
+     s.LeftCursor←e'LC' 0 37 0
+     s.DownCursor←e'DC' 0 40 0
+     s.ControlEnd←e'DL' 0 35 2
+     s.Enter←e'ER' 13 13 0
+     s.End←e'RL' 0 35 0
+     s.Delete←e'DI' 0 46 0
+     s.BackSpace←e'DB' 8 8 0
+     s.ShiftEnd←e'Rl' 0 35 1
+     s.Escape←e'EP' 27 27 0
+     s
+ }

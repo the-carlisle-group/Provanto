@@ -1,0 +1,9 @@
+ HandleCombo←{
+     r v←⍵
+     r.SelText←1,1+≢r.Text
+     1<≡v:⍺ Fire r'KeyPress',v
+     k←ToKeyPress v
+     ⍺{_←⍺ Fire r'KeyPress',⍵
+         ⎕DL ⍺.KeyPressDelay
+     }¨k
+ }

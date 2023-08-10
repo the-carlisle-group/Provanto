@@ -1,0 +1,8 @@
+ HandleGrid←{
+     r v←⍵
+     1<≡v:⍺ Fire r'GridKeyPress',v
+     k←ToKeyPress v
+     ⍺{_←⍺ Fire r'GridKeyPress',⍵
+         ⎕DL ⍺.KeyPressDelay
+     }¨k
+ }

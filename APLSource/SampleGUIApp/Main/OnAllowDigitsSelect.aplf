@@ -1,0 +1,6 @@
+ OnAllowDigitsSelect←{
+     b←⊃⍵
+     s←GetAppState 0
+     s.AllowDigits←b.State
+     0
+ }

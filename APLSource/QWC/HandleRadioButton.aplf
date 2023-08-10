@@ -1,0 +1,5 @@
+ HandleRadioButton←{
+     b←⊃⍵
+     b.State←1
+     ⍺ Fire b'Select'
+ }
