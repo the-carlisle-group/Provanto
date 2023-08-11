@@ -1,0 +1,6 @@
+ FixKeyPress←{
+     g←(⊃⍵).Type≡'Grid'
+     k←'KeyPress'≡1⊃⍵
+     ~g∧k:⍵
+     (⊂'GridKeyPress')@1⊢⍵
+ }

@@ -1,9 +1,6 @@
  HandleCombo←{
      r v←⍵
+     (⊂v)∊r.Items:⍺ HandleList ⍵
      r.SelText←1,1+≢r.Text
-     1<≡v:⍺ Fire r'KeyPress',v
-     k←ToKeyPress v
-     ⍺{_←⍺ Fire r'KeyPress',⍵
-         ⎕DL ⍺.KeyPressDelay
-     }¨k
+     ⍺ r∘FireCharacter¨v
  }

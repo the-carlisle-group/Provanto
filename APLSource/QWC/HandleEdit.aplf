@@ -1,9 +1,5 @@
  HandleEdit←{
      r v←⍵
-     _←⎕NQ r'GotFocus'
-     _←⎕DQ ⍺⊣⎕NQ ⍺ 999
-     k←ToKeyPress v
-     ⍺{_←⍺ Fire r,⍵
-         ⎕DL ⍺.KeyPressDelay
-     }¨k
+     _←⍺ Fire r'GotFocus'  ⍝ Why?!, without, very slow!
+     ⍺ r∘FireCharacter¨v
  }

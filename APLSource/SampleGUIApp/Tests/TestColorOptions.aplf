@@ -1,0 +1,10 @@
+ TestColorOptions←{
+     f←GetAppForm 0
+     s←GetAppState 0
+     g←#.Provanto.QWC
+     _←f g.Enter'ColorList' 'Blue'
+     Assert s.Color≡'Blue':
+     _←f g.Enter'ColorCombo' 'Green'
+     Assert s.Color≡'Green':
+     0
+ }

@@ -1,8 +1,5 @@
  HandleList←{
      r v←⍵
-     i←{6::⍵.Items ⋄ ⍵._Items}r
-     r.SelItems←i∊⊂v
-     s←0≢↑r.onSelect
-     s:⍺ Fire r'Select'
-     ⍺ Fire r'KeyPress' 'ER'
+     r.SelItems←r.Items∊⊂v
+     ⍺ Fire r'Select'
  }

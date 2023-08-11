@@ -1,0 +1,6 @@
+ OnCityComboChange←{
+     c←⊃⍵
+     s←GetAppState 0
+     s.City←c.Text
+     1
+ }

@@ -1,0 +1,7 @@
+ OnColorComboSelect←{
+     c←⊃⍵
+     c.##.ColorList.SelItems←c.SelItems
+     s←GetAppState 0
+     s.Color←⊃c.SelItems/c.Items
+     0
+ }

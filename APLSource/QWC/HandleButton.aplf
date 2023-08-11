@@ -1,6 +1,7 @@
  HandleButton←{
      b←⊃⍵
-     s←b.Style
-     s≡'Check':⍺ HandleCheckBox ⍵
-     ⍺ FireAndWait b'Select'
+     t←b.Type
+     t≡'Push':⍺ Fire b'Select'
+     b.State←(t≡'Check')∨~b.State
+     ⍺ Fire b'Select'
  }

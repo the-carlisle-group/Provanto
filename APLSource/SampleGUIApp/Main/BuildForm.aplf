@@ -18,5 +18,21 @@
      ad.Posn←400 10
      ad.onSelect←'OnAllowDigitsSelect'
 
+     cl←⍎'ColorList'f.⎕WC'List'
+     cl.(Posn Size)←(100 400)(100 100)
+     cl.Items←'Red' 'Green' 'Blue'
+     cl.onSelect←'OnColorListSelect'
+
+     cd←⍎'ColorCombo'f.⎕WC'Combo'
+     cd.(Posn Size)←(100 600)(100 100)
+     cd.Items←'Red' 'Green' 'Blue'
+     cd.onSelect←'OnColorComboSelect'
+
+     cc←⍎'CityCombo'f.⎕WC'Combo'('Style' 'Simple')
+     cc.(Posn Size)←(100 800)(100 100)
+     cc.Items←'London' 'Paris' 'Athens'
+     cc.onSelect←'OnCityComboSelect'
+     cc.onChange←'OnCityComboChange'
+
      f
  }

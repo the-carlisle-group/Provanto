@@ -1,5 +1,0 @@
- HandleDropCombo←{
-     r v←⍵
-     r.SelItems←r.Items∊⊂v
-     ⍺ Fire r'Select'
- }

@@ -1,0 +1,6 @@
+ OnCityComboSelect←{
+     c←⊃⍵
+     s←GetAppState 0
+     s.City←⊃c.SelItems/c.Items
+     0
+ }

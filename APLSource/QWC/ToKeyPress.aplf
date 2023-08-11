@@ -1,3 +1,0 @@
- ToKeyPress←{
-     {'KeyPress'⍵(⎕UCS ⍵)0 0}¨⍵
- }

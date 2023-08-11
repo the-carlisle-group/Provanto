@@ -1,5 +1,0 @@
- HandleCheckBox←{
-     b←⊃⍵
-     b.State←~b.State
-     ⍺ Fire b'Select'
- }

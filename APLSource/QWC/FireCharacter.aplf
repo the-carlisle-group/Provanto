@@ -1,0 +1,5 @@
+ FireCharacter←{
+     f o←⍺
+     _←f Fire o,'KeyPress'⍵(⎕UCS ⍵)0 0
+     ⎕DL f.KeyPressDelay
+ }
