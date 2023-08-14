@@ -5,7 +5,7 @@
      s←⍎'fmGrid'f.⎕WC'Form' 'Grid Editor'
      g←⍎'MainGrid's.⎕WC'Grid'
      g.(Posn Size)←(0 0)(s.Size-100 0)
-     e←⍎'Edit'g.⎕WC'Edit'
+     e←⍎'GridEdit'g.⎕WC'Edit'
      g.Input←e
      g.Values←p.GridValues
      g.onCellChange←'OnCellChange'

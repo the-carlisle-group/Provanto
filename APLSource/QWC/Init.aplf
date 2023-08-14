@@ -1,5 +1,6 @@
  Init←{
      ⍵.on999←1
+     ⍵.DequeueTimes←4
      ⍵.ActionDelay←0
      ⍵.KeyPressDelay←0
      t←⊃⎕RSI

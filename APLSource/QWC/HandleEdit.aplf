@@ -1,5 +1,4 @@
  HandleEdit←{
      r v←⍵
-     _←⍺ Fire r'GotFocus'  ⍝ Why?!, without, very slow!
      ⍺ r∘FireCharacter¨v
  }

@@ -1,5 +1,4 @@
  Fire←{
      _←⎕NQ FixKeyPress ⍵
-     n←1
-     0⊣{⎕DQ ⍵⊣⎕NQ ⍵ 999}¨n⍴⍺
+     0⊣{⎕DQ ⍵⊣⎕NQ ⍵ 999}¨⍺.DequeueTimes⍴⍺
  }

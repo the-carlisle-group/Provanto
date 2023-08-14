@@ -1,15 +1,13 @@
  TestCaseOptions←{
-     f←GetAppForm 0
      s←GetAppState 0
-     g←#.Provanto.QWC
-     b←f g.GetObject¨'ForceUpper' 'ForceLower' 'AllowMixed'
+     b←Get¨'ForceUpper' 'ForceLower' 'AllowMixed'
      Assert s.ForceUpper:
      Assert b.State≡1 0 0:
-     _←f g.Enter'ForceLower'
+     Enter'ForceLower':
      Assert s.ForceLower:
      Assert~s.ForceUpper:
      Assert b.State≡0 1 0:
-     _←f g.Enter'AllowMixed'
+     Enter'AllowMixed':
      Assert s.AllowMixed:
      Assert b.State≡0 0 1:
      Assert~s.ForceLower:
