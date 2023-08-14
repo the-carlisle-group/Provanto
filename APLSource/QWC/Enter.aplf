@@ -7,7 +7,7 @@
      ⍝   ←→ Name Event              e.g.: Enter 'MainGrid' (⊂'CellDblClick')
      ⍝   ←→ Name EventMessage       e.g.: Enter 'MainGrid' Keys.RightCursor 3
      w←⊆⍵
-     o←⍺ GetObject⊃w
+     o←⍺ Get⊃w
      _←⍺ Handle o,1↓w
      ⎕DL ⍺.ActionDelay
  }

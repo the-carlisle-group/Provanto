@@ -1,0 +1,6 @@
+ API←{
+     f←⊂'Enter'
+     f,←⊂'Get'
+     f,←⊂'SetFocus'
+     f
+ }

@@ -1,4 +1,4 @@
  SetFocus←{
-     o←⍺ GetObject ⍵
+     o←⍺ Get ⍵
      ⍺ Fire o'GotFocus'
  }

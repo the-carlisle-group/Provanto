@@ -1,0 +1,10 @@
+ Init←{
+     ⍵.on999←1
+     ⍵.ActionDelay←0
+     ⍵.KeyPressDelay←0
+     t←⊃⎕RSI
+     t.Keys←KeySpace 0
+     t.G←⎕THIS
+     _←⍵ Fix¨API 0
+     0
+ }

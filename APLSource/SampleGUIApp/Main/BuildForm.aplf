@@ -1,5 +1,9 @@
  BuildForm←{
      f←⍎'fmSampleApp'⎕WC'Form'('Coord' 'RealPixel')
+
+     _←'smFont'f.⎕WC'Font' 'Segoe UI' 24 0 0 0 400 0
+     f.FontObj←f.smFont
+
      f.Caption←'Sample GUI Application'
      l←⍎'lbFirstName'f.⎕WC'Label' 'First name:'
      l.Posn←10 10
@@ -33,6 +37,10 @@
      cc.Items←'London' 'Paris' 'Athens'
      cc.onSelect←'OnCityComboSelect'
      cc.onChange←'OnCityComboChange'
+
+     gb←⍎'EditGrid'f.⎕WC'Button' 'Edit Grid'
+     gb.Posn←200 600
+     gb.onSelect←'OnEditGrid'
 
      f
  }

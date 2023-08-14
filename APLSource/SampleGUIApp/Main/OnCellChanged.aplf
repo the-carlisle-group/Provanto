@@ -1,0 +1,5 @@
+ OnCellChanged←{
+     s←GetAppState 0
+     s.GridChangeHistory,←⍵[4]
+     0
+ }

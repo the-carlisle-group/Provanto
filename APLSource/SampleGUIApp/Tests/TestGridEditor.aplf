@@ -1,0 +1,11 @@
+ TestGridEditor←{
+     f←GetAppForm 0
+     s←GetAppState 0
+     Enter'EditGrid':
+     Enter'MainGrid'Keys.RightCursor:
+     Enter'MainGrid'Keys.DownCursor:
+     Enter'MainGrid' 'Miami':
+     Enter'MainGrid'Keys.LeftCursor:
+     Assert s.GridChangeHistory≡,⊂'Miami':
+     0
+ }

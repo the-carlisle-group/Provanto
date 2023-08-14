@@ -1,0 +1,13 @@
+ z←TestAllowDigitsPropertyTrad x;s;e
+ s←GetAppState 0
+ e←Get'Name'
+ Assert~s.AllowDigits
+ Enter'Name' '12345'
+ Assert e.Text≡''
+ Enter'AllowDigits'
+ Assert s.AllowDigits
+ Enter'Name' '12345'
+ Assert e.Text≡'12345'
+ Enter'AllowDigits'
+ Assert~s.AllowDigits
+ z←0

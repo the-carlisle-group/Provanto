@@ -1,0 +1,8 @@
+ OnEditGridOK←{
+     b←⊃⍵
+     g←b.##.MainGrid
+     s←GetAppState 0
+     s.GridValues←g.Values
+     _←b.##.Close
+     0
+ }

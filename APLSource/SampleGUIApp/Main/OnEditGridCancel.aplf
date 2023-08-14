@@ -1,0 +1,5 @@
+ OnEditGridCancel←{
+     b←⊃⍵
+     _←b.##.Close
+     0
+ }

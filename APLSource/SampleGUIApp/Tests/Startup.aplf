@@ -1,8 +1,6 @@
  Startup←{
      _←1 ##.Main.Run 0
      f←##.Main.fmSampleApp
-     f.on999←1
-     f.ActionDelay←0
-     f.KeyPressDelay←0
+     _←#.Provanto.QWC.Init f
      0
  }

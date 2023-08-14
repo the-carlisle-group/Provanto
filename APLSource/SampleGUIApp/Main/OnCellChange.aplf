@@ -1,0 +1,8 @@
+ OnCellChange←{
+     g←⊃⍵
+     s←GetAppState 0
+     s.AllowMixed:1
+     m←⍵
+     m[4]←s.ForceUpper ⎕C ⍵[4]
+     m
+ }

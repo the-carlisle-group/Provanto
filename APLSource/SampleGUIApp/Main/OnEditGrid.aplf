@@ -1,0 +1,24 @@
+ OnEditGrid←{
+     b←⊃⍵
+     f←b.##
+     p←GetAppState 0
+     s←⍎'fmGrid'f.⎕WC'Form' 'Grid Editor'
+     g←⍎'MainGrid's.⎕WC'Grid'
+     g.(Posn Size)←(0 0)(s.Size-100 0)
+     e←⍎'Edit'g.⎕WC'Edit'
+     g.Input←e
+     g.Values←p.GridValues
+     g.onCellChange←'OnCellChange'
+     g.onCellChanged←'OnCellChanged'
+
+     ok←⍎'OK's.⎕WC'Button' 'OK'
+     ok.onSelect←'OnEditGridOK'
+     cb←⍎'Cancel's.⎕WC'Button' 'Cancel'
+     cb.Cancel←1
+     cb.onSelect←'OnEditGridCancel'
+     (ok cb).Size←⊂60 100
+     (ok cb).Posn←(2/s.Size[0]-60),¨300 500
+     f._AppState.TestMode:0
+     _←⎕NQ g'GotFocus'
+     s.Wait
+ }
