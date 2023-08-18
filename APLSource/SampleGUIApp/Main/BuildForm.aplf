@@ -4,6 +4,10 @@
      _←'smFont'f.⎕WC'Font' 'Segoe UI' 24 0 0 0 400 0
      f.FontObj←f.smFont
 
+     f.onMouseDown←'OnFormMouseDown'
+     f.onMouseUp←'OnFormMouseUp'
+     f.onMouseDblClick←'OnFormMouseDblClick'
+
      f.Caption←'Sample GUI Application'
      l←⍎'lbFirstName'f.⎕WC'Label' 'First name:'
      l.Posn←10 10

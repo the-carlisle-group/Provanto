@@ -1,0 +1,5 @@
+ OnFormMouseDblClick←{
+     s←GetAppState 0
+     s.MouseEvents,←⊂'MouseDblClick'
+     0
+ }

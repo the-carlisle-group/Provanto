@@ -1,0 +1,5 @@
+ OnFormMouseUp←{
+     s←GetAppState 0
+     s.MouseEvents,←⊂'MouseUp'
+     0
+ }

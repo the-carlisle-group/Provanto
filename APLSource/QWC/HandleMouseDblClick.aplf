@@ -1,0 +1,4 @@
+ HandleMouseDblClick←{
+     o←⊃⍵
+     ⍺ Fire¨{o('Mouse',⍵)0 0 1 0}¨'Down' 'Up' 'DblClick' 'Up'
+ }

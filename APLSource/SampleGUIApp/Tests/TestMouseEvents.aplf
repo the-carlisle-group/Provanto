@@ -1,0 +1,7 @@
+ TestMouseEvents←{
+     s←GetAppState 0
+     s.MouseEvents←''
+     Enter''(⊂'MouseDblClick'):
+     Assert s.MouseEvents≡'MouseDown' 'MouseUp' 'MouseDblClick' 'MouseUp':
+     0
+ }

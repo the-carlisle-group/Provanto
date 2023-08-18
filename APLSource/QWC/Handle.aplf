@@ -1,5 +1,6 @@
  Handle←{
      (o m)←2↑⍵,⊂''
+     m≡⊂'MouseDblClick':⍺ HandleMouseDblClick ⍵
      1<|≡m:⍺ Fire o,m
      t←o.Type
      t≡'Button':⍺ HandleButton ⍵

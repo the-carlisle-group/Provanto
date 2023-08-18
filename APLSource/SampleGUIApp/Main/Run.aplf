@@ -10,6 +10,7 @@
      s.AllowDigits←0
      s.GridValues←2 3⍴'Rome' 'Paris' 'Athens' 'Split' 'London' 'Lisbon'
      s.GridChangeHistory←⍬
+     s.MouseEvents←''
      f._AppState←s
      ⍺:0
      f.Wait
