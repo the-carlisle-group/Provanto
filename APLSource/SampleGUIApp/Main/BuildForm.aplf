@@ -9,6 +9,18 @@
      f.onMouseDblClick←'OnFormMouseDblClick'
 
      f.Caption←'Sample GUI Application'
+
+     ⍝ Code that demos necesity of repeated DQ's
+     pm←⍎'PressMe'f.⎕WC'Button' 'Press Me'
+     pm.onSelect←'OnPressMe'
+     f.on100←'On100'
+     f.on101←'On101'
+     f.on102←'On102'
+     f.on103←'On103'
+     f.on104←'On104'
+     f.on105←'On105'
+
+
      l←⍎'lbFirstName'f.⎕WC'Label' 'First name:'
      l.Posn←10 10
      e←⍎'Name'f.⎕WC'Edit'

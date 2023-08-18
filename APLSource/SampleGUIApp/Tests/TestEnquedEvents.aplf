@@ -1,0 +1,7 @@
+ TestEnquedEvents←{
+     s←GetAppState 0
+     s.EnquedEvents←''
+     Enter'PressMe':
+     Assert s.EnquedEvents≡100+⍳6:
+     0
+ }

@@ -11,6 +11,7 @@
      s.GridValues←2 3⍴'Rome' 'Paris' 'Athens' 'Split' 'London' 'Lisbon'
      s.GridChangeHistory←⍬
      s.MouseEvents←''
+     s.EnquedEvents←''
      f._AppState←s
      ⍺:0
      f.Wait

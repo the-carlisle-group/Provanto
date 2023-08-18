@@ -1,0 +1,4 @@
+ OnPressMe←{
+     b←⊃⍵
+     ⎕NQ b.## 100
+ }

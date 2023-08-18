@@ -1,0 +1,5 @@
+ On104←{
+     s←GetAppState 0
+     s.EnquedEvents,←⍵[1]
+     ⎕NQ(⊃⍵)105
+ }
