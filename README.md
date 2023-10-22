@@ -1,5 +1,5 @@
 # Provanto
-Provanto is a testing framework for Dyalog APL, included the fully automated testing of
+Provanto is a testing framework for Dyalog APL, including the fully automated testing of
 `⎕WC` user interfaces.
 
 It is included with Dado, and may be run with the user command `]Dado.Runtests`. Dado expects the tests
