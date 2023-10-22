@@ -88,8 +88,8 @@ Each test suite may contain a `Startup` function and a `Teardown` function. Thes
 There may also be a `Startup` and `Teardown` function in the parent namespace of a set of suites, which are run once for all of the suites. 
 
 ## Testing GUI Code
-Provanto provides simple tools for the automated testing of GUIs build with `⎕WC`.
-THe `#.Provanto.SampleGUIApp` namepace contains a sample GUI application and associated tests.
+Provanto provides simple tools for the automated testing of GUIs built with `⎕WC`.
+The `#.Provanto.SampleGUIApp` namepace contains a sample GUI application and associated tests.
 Typically the `Startup` will create the GUI and initialize the primary form for automated testing.
 The Startup function in the sample GUO app is:
 
@@ -101,7 +101,7 @@ Startup←{
  }
 ~~~
 
-This creats the GUI and intializes the primary form, preparing it for automated tests.
+This creates the GUI and intializes the primary form, preparing it for automated tests.
 Once this is done, a typical test might look like:
 
 ~~~
@@ -128,4 +128,6 @@ primary form using as short a path as possible. `Enter` takes some action on a G
 of the checkbox `AllowDigits`, it simply selects it. In the case of the edit oject `Name`, it enters the provided
 text. `Enter` will expect different arguments for different types of objects, and do different things depending 
 on the type of object.
+
+Events may be fired using the `Fire` function.
 
