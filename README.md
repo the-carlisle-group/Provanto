@@ -1,5 +1,6 @@
 # Provanto
-Provanto is a testing framework for Dyalog APL.
+Provanto is a testing framework for Dyalog APL, included the fully automated testing of
+`⎕WC` user interfaces.
 
 It is included with Dado, and may be run with the user command `]Dado.Runtests`. Dado expects the tests
 to be in the namespace `Tests` and the code to be in the namespace `Main`, unless otherwise specified.
@@ -56,25 +57,27 @@ the `Run` function on failed or broken tests. Y is an optional integer from 0 to
 The following is an example from the Text2Date project:
 
 ~~~
-      #.Provanto.Run #.Text2Date.(Tests Main)
-Passed:       #.Text2Date.TestCenturyWindow
-Passed:       #.Text2Date.TestFixedFormats
-Passed:       #.Text2Date.TestLeadingVariableElement
-Passed:       #.Text2Date.TestPattern
-********************
- Number of tests:  4
- Passed            4
- Failed            0
- Broken            0
- N/A               0
- Disabled          0
-********************
-Code coverage:  78%
-Untested code:
-#.Text2Date.Main.BasicFormats            
-#.Text2Date.Main.InferFormat             
-#.Text2Date.Main.Signal                  
-#.Text2Date.Main.VariableMMM[3 4 5 6 7 8]
+      #.Provanto.Main.Run #.Text2Date.(Tests Main)
+Running suite: Tests
+Passed:       #.Text2Date.Tests.TestCenturyWindow
+Passed:       #.Text2Date.Tests.TestComplexNumbers
+Passed:       #.Text2Date.Tests.TestErrorTrapping
+Passed:       #.Text2Date.Tests.TestExcelFormats
+Passed:       #.Text2Date.Tests.TestFalsePostives
+Passed:       #.Text2Date.Tests.TestFixedFormats
+Passed:       #.Text2Date.Tests.TestInferFormat
+Passed:       #.Text2Date.Tests.TestLeadingVariableElement
+Passed:       #.Text2Date.Tests.TestMultipleFormats
+Passed:       #.Text2Date.Tests.TestNumericData
+Passed:       #.Text2Date.Tests.TestPattern
+Passed:       #.Text2Date.Tests.TestUndelimitedFixedFormats
+Passed:       #.Text2Date.Tests.TestVariableFormats
+──────────────────────────────────────────────
+ Total  Passed  Failed  Broken  N/A  Disabled 
+    13      13       0       0    0         0 
+──────────────────────────────────────────────
+
+Code coverage: 100%
 ~~~
 
 If code coverage is activated, the test namespace is automatically added to
@@ -83,4 +86,46 @@ the code measured for coverage.
 ## Startup and Teardown
 Each test suite may contain a `Startup` function and a `Teardown` function. These are automatically run before and after the tests in the suite.
 There may also be a `Startup` and `Teardown` function in the parent namespace of a set of suites, which are run once for all of the suites. 
+
+## Testing GUI Code
+Provanto provides simple tools for the automated testing of GUIs build with `⎕WC`.
+THe `#.Provanto.SampleGUIApp` namepace contains a sample GUI application and associated tests.
+Typically the `Startup` will create the GUI and initialize the primary form for automated testing.
+The Startup function in the sample GUO app is:
+
+~~~
+Startup←{
+     _←1 ##.Main.Run 0
+     _←#.Provanto.QWC.Init ##.Main.fmSampleApp
+     0
+ }
+~~~
+
+This creats the GUI and intializes the primary form, preparing it for automated tests.
+Once this is done, a typical test might look like:
+
+~~~
+TestAllowDigitsProperty←{
+     s←GetAppState 0
+     e←Get'Name'
+     Assert~s.AllowDigits:
+     Enter'Name' 'A12B345C':
+     Assert e.Text≡'ABC':
+     Enter'AllowDigits':
+     Assert s.AllowDigits:
+     Enter'Name' '12345':
+     Assert e.Text≡'ABC12345':
+     Enter'AllowDigits':
+     Assert~s.AllowDigits:
+     0
+ }
+~~~
+
+The GetAppState function is a user-provided function that gives easy acces to the state of the application
+It might return a namepace, a class, or anything at all. The `Get` and `Enter` function are injected into 
+the test namepace by `QWC.Init` (just like `Assert` and `Try` are injected). `Get` retrieves objects from the
+primary form using as short a path as possible. `Enter` takes some action on a GUI object. in the case
+of the checkbox `AllowDigits`, it simply selects it. In the case of the edit oject `Name`, it enters the provided
+text. `Enter` will expect different arguments for different types of objects, and do different things depending 
+on the type of object.
 
