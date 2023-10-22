@@ -90,8 +90,8 @@ There may also be a `Startup` and `Teardown` function in the parent namespace of
 ## Testing GUI Code
 Provanto provides simple tools for the automated testing of GUIs built with `⎕WC`.
 The `#.Provanto.SampleGUIApp` namepace contains a sample GUI application and associated tests.
-Typically the `Startup` will create the GUI and initialize the primary form for automated testing.
-The Startup function in the sample GUO app is:
+Typically the `Startup` function will create the GUI and initialize the primary form for automated testing.
+The Startup function in the sample GUI app is:
 
 ~~~
 Startup←{
@@ -101,7 +101,7 @@ Startup←{
  }
 ~~~
 
-This creates the GUI and intializes the primary form, preparing it for automated tests.
+This creates the GUI and then intializes the primary form, preparing it for automated tests.
 Once this is done, a typical test might look like:
 
 ~~~
@@ -121,13 +121,12 @@ TestAllowDigitsProperty←{
  }
 ~~~
 
-The GetAppState function is a user-provided function that gives easy acces to the state of the application
-It might return a namepace, a class, or anything at all. The `Get` and `Enter` function are injected into 
+The `GetAppState` function is a user-provided function that gives easy access to the state of the application
+It might return a namepace, a class, or anything at all. The `Get` and `Enter` functions are injected into 
 the test namepace by `QWC.Init` (just like `Assert` and `Try` are injected). `Get` retrieves objects from the
-primary form using as short a path as possible. `Enter` takes some action on a GUI object. in the case
-of the checkbox `AllowDigits`, it simply selects it. In the case of the edit oject `Name`, it enters the provided
+primary form using as short a path as possible. `Enter` takes some action on a GUI object. In the case
+of the checkbox `AllowDigits`, it simply toggles it. In the case of the edit oject `Name`, it enters the provided
 text. `Enter` will expect different arguments for different types of objects, and do different things depending 
 on the type of object.
 
 Events may be fired using the `Fire` function.
-
