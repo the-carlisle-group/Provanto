@@ -1,4 +1,6 @@
  TestCaseOptions←{
+     _←#.Provanto.QWC.Init ##.Main.fmSampleApp
+     ##.Main.fmSampleApp.DequeueTimes←0
      s←GetAppState 0
      b←Get¨'ForceUpper' 'ForceLower' 'AllowMixed'
      Assert s.ForceUpper:

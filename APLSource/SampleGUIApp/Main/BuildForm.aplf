@@ -56,7 +56,9 @@
 
      gb←⍎'EditGrid'f.⎕WC'Button' 'Edit Grid'
      gb.Posn←200 600
-     gb.onSelect←'OnEditGrid'
+     ⍝ gb.onSelect←'OnEditGrid'
+     gb.onSelect←'OnRunTest'
+
 
      f
  }

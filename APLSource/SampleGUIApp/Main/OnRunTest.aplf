@@ -1,0 +1,7 @@
+ OnRunTest←{
+     _←##.Tests.TestCaseOptions 0
+     ⎕←'Test ran '
+     _←##.Tests.TestEnquedEvents 0
+     ⎕←'Test ran'
+     0
+ }
