@@ -33,6 +33,10 @@ The `Assert` function requires a scalar Boolean right argument. It preceeds a na
 The `Try` operator attempts to apply
 the function with the given arguments, and returns the error number or 0 if no error is generated.
 
+> Note that the naked guard technique is not a requirement. The requirement is that if the
+> assertion is true, the test function continues. Thus the naked guard may be avoided by using a trad function
+> for the test or by assigning the result of `Assert`.
+
 A test function may include additional expressions as necessary. It is typical to use two lines
 for each assertion, the first to compute a value, the subsequent one to test the value.
 For real examples, see the [tests for the Text2Date project](https://github.com/the-carlisle-group/Text2Date/tree/master/APLSource/Tests).
