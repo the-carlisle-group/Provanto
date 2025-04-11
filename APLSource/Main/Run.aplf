@@ -10,10 +10,12 @@
      z.Suites←{⍵↓⍨1<≢⍵}Spaces⍕z.TestSpace
      z.IsSuite←z.TestSpace≠⊃z.Suites
      z.Profile←z.CodeSpace≠0
-     p←⎕PROFILE⍣z.Profile
+     z.Profiling←'active'≡⊃⎕PROFILE'state'
      e←z.TestSpace∘Execute⍣z.IsSuite
      _←e z'Startup'
-     _←p¨'Clear'('Start' 'coverage')
+     p←⎕PROFILE⍣z.Profile
+     f←⎕PROFILE⍣(z.Profile∧~z.Profiling)
+     _←f¨'clear'('start' 'coverage')
      z.Results←z RunSuite¨z.Suites
      _←p'stop'
      _←e z'Teardown'
